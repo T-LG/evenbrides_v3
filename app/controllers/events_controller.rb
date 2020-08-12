@@ -3,6 +3,11 @@ class EventsController < ApplicationController
 
   def index
   end
+
+  def show
+    @event = Event.find(params[:id])
+    puts @event
+  end
   
   def new 
   	@event = Event.new
@@ -15,15 +20,15 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to events_path, notice: "L'événement #{@event.title} a bien été créé ! Bien joué petit génie !"
     else
-      redirect_to new_event_path, alert: "Certaines informations sont incorrectes : la description doit faire au moins 20 caractères. "
+      redirect_to new_event_path, alert: "Certaines informations sont incorrectes : la description doit faire au moins 20 caractères et la date doit être dans le futur. "
     end
   end
   
   private
 
   def authenticate_current_user
-    unless current_user == Gossip.find(params[:id]).user
-      redirect_to gossip_path(params[:id]), alert: "Vous ne pouvez pas modifier ce potin"
+    unless current_user == Event.find(params[:id]).user
+      redirect_to events_path(params[:id]), alert: "Vous ne pouvez pas modifier cet évenement"
     end
   end
 end

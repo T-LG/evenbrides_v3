@@ -16,7 +16,7 @@
 	   	<div class="container" style= "margin-bottom: 45px">
         <div class="row">
           <div class="col-sm-12 ">
-              <h2 class="card-title"> Amount: <%= Event.find(params[:event_id]).price %> €</h2>
+              <h2 class="card-title"> Prix : <%= Event.find(params[:event_id]).price %> €</h2>
           </div>
         </div>
       </div>
@@ -24,10 +24,9 @@
 
 	  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 	          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-	          data-description="A month's subscription"
-	          data-amount="500"
+	          data-description="Achat Event"
+	          data-amount="<%= Event.find(params[:event_id]).price*100 %> €"
 	          data-locale="auto"></script>
 	<% end %>
 
 </body>
-</html>

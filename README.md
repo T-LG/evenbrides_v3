@@ -14,6 +14,9 @@ Pour faire fonctionner le site, dans le dossier de l'application faire dans le t
 Enfin lancer sur votre navigateur: localhost:3000/events/
 ou https://evenbrides.herokuapp.com/
 
+PUBLISHABLE_KEY=pk_test_TYooMQauvdEDq54NiTphI7jx \
+SECRET_KEY=sk_test_4eC39HqLyjWDarjtT1zdp7dc rails s
+
 # ENJOY IT!
 
 This README would normally document whatever steps are necessary to get the

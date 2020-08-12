@@ -20,7 +20,7 @@
 
                 <p><%= @event.attendances.count %> <%= (@event.attendances.count) == 1 ? 'Participant' : 'Participants'%></p>
 
-                <%= button_to 'Participez !', events_path, method: :post %>
+                <%= link_to 'Participez !', new_event_attendance_path(params[:id]) %>
             </div>
         </div>
     </div>

@@ -17,6 +17,15 @@ ou https://evenbrides.herokuapp.com/
 PUBLISHABLE_KEY=pk_test_TYooMQauvdEDq54NiTphI7jx \
 SECRET_KEY=sk_test_4eC39HqLyjWDarjtT1zdp7dc rails s
 
+a tester pour les boutons liens
+
+#<a href="event_path(event.id)" class="btn btn-primary" role="button">Accéder à l'Event</a>
+
+
+<%= link_to "Accéder à l'Event", event_path(event.id) :class => "btn btn-primary" %>
+
+
+
 # ENJOY IT!
 
 This README would normally document whatever steps are necessary to get the

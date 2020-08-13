@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   get root 'events#index'
 
   resources :users, only: [:show]
+  
   resources :events do
-  	resources :attendances
+    resources :attendances
+    resources :picture_events, only: [:create]
   end
 
   resources :charges

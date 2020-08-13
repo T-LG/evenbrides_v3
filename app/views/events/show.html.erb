@@ -7,6 +7,7 @@
 
 <body>
 
+
     <div class="container" style= "margin-bottom: 45px">
         <div class="row">
             <div class="col-sm-12 ">
@@ -25,6 +26,21 @@
         </div>
     </div>
 
+<h1>Page Event</h1>
+
+<p>Bienvenue sur la page d'ajout d'une picture pour l'Event portant l'id : <%=@event.id%></p>
+<h3>Event actuel</h3>
+<%if @event.picture_event.attached?%>
+  <%= image_tag @event.picture_event, alt: 'picture_event' %>
+<%else%>
+  <p>=== Il n'y a pas encore de picture liée à cet Event ===</p>
+<%end%>
+
+<h3>Changer de picture ?</h3>
+<%= form_tag event_picture_events_path(@event), multipart: true do %>
+  <%= file_field_tag :picture_event %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>
     
 </body>
 </html>

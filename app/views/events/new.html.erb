@@ -25,6 +25,16 @@
         <br><br><br>
         <h1>Création événement</h1>
 
+        <br><br>
+        <div>
+            <h3>Ajouter une photo de l'Event?</h3>
+            <%= form_tag events_path(@event), multipart: true do %>
+            <%= file_field_tag :picture_event %>
+            <%= submit_tag "mettre à jour" %>
+          </div>
+          <% end %>
+          <br><br>
+
         <%= form_tag url_for(action: 'create'), method: "post" do %>
 
           <div class="form-group">
@@ -56,10 +66,11 @@
             <%= label_tag 'Complète avec une durée (en minutes, multiple de 5) : ' %><br/>
             <%= text_field_tag :event_duration, "", class: 'form-control' %>
           </div>
-
+          
           <div class="actions mt-5">
             <%= submit_tag("Create Event", :class =>"btn btn-primary") %>
           </div>
+
         <% end %>
       </div>
     </div>

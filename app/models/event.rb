@@ -12,8 +12,10 @@ class Event < ApplicationRecord
 	validates :title, presence: true, length: { in: 5..140, message: "Un titre fait entre 5 et 140 caractères" }
 	validates :description, presence: true, length: { in: 20..1000, message: "Un description fait entre 20 et 1000 caractères" }
 	validates :price, presence: true, length: { in: 1..1000, message: "Le prix doit etre compris entre 1 et 1000 €" } 
-	validates :location, presence: true 
+    validates :location, presence: true 
 
+    has_one_attached :picture_event
+    
     private
 
 	def start_date_not_before_time_now #Méthode pour ne pas entrer une date antérieur à la date de debut 

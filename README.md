@@ -9,24 +9,23 @@ Pour faire fonctionner le site, dans le dossier de l'application faire dans le t
 - rails db:create 
 - rails db:migrate 
 - rails db:seed 
-- rails server
+- Sur le terminal copier coller:
+PUBLISHABLE_KEY=pk_test_TYooMQauvdEDq54NiTphI7jx \
+SECRET_KEY=sk_test_4eC39HqLyjWDarjtT1zdp7dc rails s
 
 Enfin lancer sur votre navigateur: localhost:3000/events/
 ou https://evenbrides.herokuapp.com/
 
-PUBLISHABLE_KEY=pk_test_TYooMQauvdEDq54NiTphI7jx \
-SECRET_KEY=sk_test_4eC39HqLyjWDarjtT1zdp7dc rails s
+# ENJOY IT!
 
-a tester pour les boutons liens
+#A tester pour les boutons liens
 
-#<a href="event_path(event.id)" class="btn btn-primary" role="button">Accéder à l'Event</a>
-
+<a href="event_path(event.id)" class="btn btn-primary" role="button">Accéder à l'Event</a>
 
 <%= link_to "Accéder à l'Event", event_path(event.id) :class => "btn btn-primary" %>
 
 
 
-# ENJOY IT!
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
